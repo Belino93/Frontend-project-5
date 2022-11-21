@@ -7,5 +7,6 @@
 }
 
 .input-error {
-  
+  color: red;
+  margin-left: 8.5em;
 }
