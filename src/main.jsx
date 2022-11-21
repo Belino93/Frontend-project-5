@@ -7,6 +7,7 @@ import Header from './components/Header/Header'
 import Login from './containers/User/Login/Login'
 import Register from './containers/User/Register/Register'
 import Films from './containers/Films/Films'
+import Footer from './components/Footer/Footer'
 
 ReactDOM.createRoot(document.getElementById('root')).render(
   
@@ -21,6 +22,7 @@ ReactDOM.createRoot(document.getElementById('root')).render(
       <Route path='/login' element={<Login />} />
 
     </Routes>
+    <Footer/>
 
     </BrowserRouter>
   </React.StrictMode>
