@@ -1,0 +1,12 @@
+.header-container {
+  width: 100vw;
+  height: 10vh;
+  background-color: aquamarine;
+  display: flex;
+  align-items: center;
+  justify-content: end;
+}
+
+.link-design {
+  margin: 2em;
+}

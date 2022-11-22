@@ -1,0 +1,8 @@
+.footer-container {
+  width: 100vw;
+  height: 5vh;
+  background-color: aquamarine;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
