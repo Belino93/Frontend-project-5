@@ -43,7 +43,7 @@ function Register() {
   };
 
   const send = (user, userError) => {
-    if((user.name !== userError.name) && (user.surname !== userError.surname) && (user.email !== userError.email) && (user.password !== userError.password) && (user.password === user.password2)){
+    if((user.name !== '' && userError.name ==='') && (user.surname !== '' && userError.surname === '') && (user.email !== '' && userError.email === '') && (user.password !== '' && userError.password === '') && (user.password === user.password2 && userError.password2 === '')){
       try {
         const status = createUser(user)
         if(status.message === "Email is already registered: "){
