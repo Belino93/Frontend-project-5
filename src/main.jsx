@@ -8,6 +8,7 @@ import Login from './containers/User/Login/Login'
 import Register from './containers/User/Register/Register'
 import Films from './containers/Films/Films'
 import Footer from './components/Footer/Footer'
+import 'bootstrap/dist/css/bootstrap.min.css';
 
 ReactDOM.createRoot(document.getElementById('root')).render(
   

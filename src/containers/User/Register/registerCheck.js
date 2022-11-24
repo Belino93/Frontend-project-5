@@ -1,5 +1,5 @@
-export const registerValidator = (eventTargetId, eventTargetValue, password) => {
-  switch (eventTargetId) {
+export const registerValidator = (eventTargetName, eventTargetValue, password) => {
+  switch (eventTargetName) {
     case 'name':
       if (!eventTargetValue.match(/^[A-Z]+$/i)) {
         return "Invalid name";

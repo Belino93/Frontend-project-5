@@ -2,11 +2,11 @@ import { useState, useEffect } from "react";
 import "./Register.css";
 import { Button, Form, Input } from "antd";
 import { registerValidator } from "./registerCheck";
-import {createUser} from '../../../services/apiCalls'
-import {useNavigate} from 'react-router-dom'
+import { createUser } from "../../../services/apiCalls";
+import { useNavigate } from "react-router-dom";
 
 function Register() {
-  const navigate = useNavigate()
+  const navigate = useNavigate();
   const [user, setUser] = useState({
     name: "",
     surname: "",
@@ -26,106 +26,104 @@ function Register() {
   const inputHandler = (e) => {
     setUser((prevState) => ({
       ...prevState,
-      [e.target.id]: e.target.value,
+      [e.target.name]: e.target.value,
     }));
   };
 
   const errorHandler = (e) => {
     let error = "";
-    error = registerValidator(e.target.id, e.target.value, user.password);
+    error = registerValidator(e.target.name, e.target.value, user.password);
+
     if (error === undefined) {
       error = "";
     }
     setUserError((prevState) => ({
       ...prevState,
-      [e.target.id + "Error"]: error,
+      [e.target.name + "Error"]: error,
     }));
   };
 
-  const send = (user, userError) => {
-    if((user.name !== '' && userError.name ==='') && (user.surname !== '' && userError.surname === '') && (user.email !== '' && userError.email === '') && (user.password !== '' && userError.password === '') && (user.password === user.password2 && userError.password2 === '')){
+  const send = async (user, userError) => {
+    if (
+      user.name !== "" &&
+      userError.nameError === "" &&
+      user.surname !== "" &&
+      userError.surnameError === "" &&
+      user.email !== "" &&
+      userError.emailError === "" &&
+      user.password !== "" &&
+      userError.passwordError === "" &&
+      user.password === user.password2 &&
+      userError.password2Error === ""
+    ) {
       try {
-        const status = createUser(user)
-        if(status.message === "Email is already registered: "){
-          
-        }
-        setTimeout(() => {
-          navigate('/')
-        }, 500) 
-        
-
+        const userCreated = await createUser(user);
+        console.log(userCreated);
       } catch (error) {
-        throw new Error({'message': 'Register failed'})
+        if (error.status === 400) {
+          console.log(`error : ${error}`);
+        }
+        if (error.status === 500) {
+        }
       }
-      
     }
-    
   };
 
   return (
     <div className="register-container">
-      <Form
-        className="form-style"
-        labelCol={{
-          span: 8,
-        }}
-        wrapperCol={{
-          span: 16,
-        }}
-      >
-        <div className="input-error">{userError.nameError}</div>
-        <Form.Item label="Name" name="name">
-          <Input
-            onChange={(e) => inputHandler(e)}
-            onBlur={(e) => errorHandler(e)}
-          />
-          
-        </Form.Item>
-        
-        <div className="input-error">{userError.surnameError}</div>
-        <Form.Item label="Surname" name="surname">
-          <Input
-            onChange={(e) => inputHandler(e)}
-            onBlur={(e) => errorHandler(e)}
-          />
-        </Form.Item>
-        
-        <div className="input-error">{userError.emailError}</div>
-        <Form.Item label="Email" name="email">
-          <Input
-            onChange={(e) => inputHandler(e)}
-            onBlur={(e) => errorHandler(e)}
-          />
-        </Form.Item>
-        
-        <div className="input-error">{userError.passwordError}</div>
+      <div className="input-error">{userError.nameError}</div>
 
-        <Form.Item label="Password" name="password">
-          <Input.Password
-            onChange={(e) => inputHandler(e)}
-            onBlur={(e) => errorHandler(e)}
-          />
-        </Form.Item>
-        <div className="input-error">{userError.password2Error}</div>
+      <Input
+        className="self-input"
+        name="name"
+        placeholder="Name"
+        onChange={(e) => inputHandler(e)}
+        onBlur={(e) => errorHandler(e)}
+      />
 
-        <Form.Item label="Password" name="password2">
-          <Input.Password
-            onChange={(e) => inputHandler(e)}
-            onBlur={(e) => errorHandler(e)}
-          />
-        </Form.Item>
+      <div className="input-error">{userError.surnameError}</div>
 
-        <Form.Item
-          wrapperCol={{
-            offset: 10,
-            span: 16,
-          }}
-        >
-          <Button type="primary" onClick={() => send(user, userError)}>
-            Register
-          </Button>
-        </Form.Item>
-      </Form>
+      <Input
+        className="self-input"
+        name="surname"
+        placeholder="Surname"
+        onChange={(e) => inputHandler(e)}
+        onBlur={(e) => errorHandler(e)}
+      />
+
+      <div className="input-error">{userError.emailError}</div>
+
+      <Input
+        className="self-input"
+        name="email"
+        placeholder="Email"
+        onChange={(e) => inputHandler(e)}
+        onBlur={(e) => errorHandler(e)}
+      />
+
+      <div className="input-error">{userError.passwordError}</div>
+
+      <Input.Password
+        className="self-input"
+        name="password"
+        placeholder="Password"
+        onChange={(e) => inputHandler(e)}
+        onBlur={(e) => errorHandler(e)}
+      />
+
+      <div className="input-error">{userError.password2Error}</div>
+
+      <Input.Password
+        className="self-input"
+        name="password2"
+        placeholder="Repeat your password"
+        onChange={(e) => inputHandler(e)}
+        onBlur={(e) => errorHandler(e)}
+      />
+
+      <Button type="primary" onClick={() => send(user, userError)}>
+        Register
+      </Button>
     </div>
   );
 }
