@@ -19,5 +19,5 @@ export const loginUser = async (user) => {
     email: user.email,
     password: user.password
   })
-  return userLoged;
+  return userLoged.data;
 };

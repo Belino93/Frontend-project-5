@@ -12,9 +12,8 @@ function Login() {
     email: "",
     password: "",
   });
-  const [userError, setUserError] = useState({
-    emailError: "",
-    passwordError: "",
+  const [loginError, setLoginError] = useState({
+    error: "",
   });
 
   const inputHandler = (e) => {
@@ -26,10 +25,20 @@ function Login() {
 
   const clickHandler = (user) => {
     loginUser(user)
-    .then((loged) => console.log(loged))
-    .catch((error) => console.log(error.message))
-    
-  }
+      .then((loged) => {
+        localStorage.setItem("token", loged.jwt);
+        setLoginError((prevState) => ({
+          ...prevState,
+          error: '',
+        }))
+      })
+      .catch((error) =>
+        setLoginError((prevState) => ({
+          ...prevState,
+          error: error.response.data.message,
+        }))
+      );
+  };
 
   return (
     <div className="login-container">
@@ -57,7 +66,11 @@ function Login() {
         </Form.Item>
 
         <Form.Item>
-          <Button type="primary" className="login-form-button button-login" onClick={() => clickHandler(user)}>
+          <Button
+            type="primary"
+            className="login-form-button button-login"
+            onClick={() => clickHandler(user)}
+          >
             Log in
           </Button>
           Or{" "}
@@ -68,6 +81,7 @@ function Login() {
             Register now
           </span>
         </Form.Item>
+        <div className="login-error">{loginError.error}</div>
       </Form>
     </div>
   );

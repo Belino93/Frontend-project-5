@@ -18,3 +18,8 @@ margin-right: 1.5em;
 .navigator-link{
   color: blue;
 }
+
+.login-error {
+  text-align: center;
+  color: red;
+}

@@ -56,16 +56,9 @@ function Register() {
       user.password === user.password2 &&
       userError.password2Error === ""
     ) {
-      try {
-        const userCreated = await createUser(user);
-        console.log(userCreated);
-      } catch (error) {
-        if (error.status === 400) {
-          console.log(`error : ${error}`);
-        }
-        if (error.status === 500) {
-        }
-      }
+      createUser(user)
+        .then((created) => console.log(created))
+        .catch((error) => console.log(error.message));
     }
   };
 
