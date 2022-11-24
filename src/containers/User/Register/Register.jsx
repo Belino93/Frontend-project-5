@@ -58,7 +58,12 @@ function Register() {
     ) {
       createUser(user)
         .then((created) => console.log(created))
-        .catch((error) => console.log(error.message));
+        .catch((error) => {
+          setUserError((prevState) => ({
+            ...prevState,
+            emailError: error.response.data.message,
+          }));
+        });
     }
   };
 
