@@ -2,7 +2,7 @@ import "./Login.css";
 import React from "react";
 import { LockOutlined, UserOutlined } from "@ant-design/icons";
 import { Button, Form, Input } from "antd";
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import { useNavigate } from "react-router-dom";
 import { loginUser } from "../../../services/apiCalls";
 
@@ -16,6 +16,8 @@ function Login() {
     error: "",
   });
 
+
+
   const inputHandler = (e) => {
     setUser((prevState) => ({
       ...prevState,
@@ -23,14 +25,24 @@ function Login() {
     }));
   };
 
+  useEffect(() => {
+    if (localStorage.getItem("token")) {
+      navigate("/");
+    }
+    return
+  },[])
+
+  
+
   const clickHandler = (user) => {
     loginUser(user)
       .then((loged) => {
         localStorage.setItem("token", loged.jwt);
         setLoginError((prevState) => ({
           ...prevState,
-          error: '',
-        }))
+          error: "",
+        }));
+        navigate('/')
       })
       .catch((error) =>
         setLoginError((prevState) => ({
@@ -39,6 +51,7 @@ function Login() {
         }))
       );
   };
+
 
   return (
     <div className="login-container">
