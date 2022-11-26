@@ -8,4 +8,10 @@
 
 .link-design {
   margin-right: 2em;
+  cursor: pointer;
+}
+
+.link-design-out {
+  cursor: pointer;
+  color: red;
 }
