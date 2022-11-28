@@ -6,10 +6,12 @@ import Resultados from './containers/Search/Resultados'
 import FilmsCards from "./containers/Films/FilmsCards";
 
 function App() {
+
   const [state, setState] = useState({
     s: "",
     resultados: [],
     selected: {}
+
 
   })
 
