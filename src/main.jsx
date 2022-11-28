@@ -6,7 +6,7 @@ import {BrowserRouter, Route, Routes} from 'react-router-dom'
 import Header from './components/Header/Header'
 import Login from './containers/User/Login/Login'
 import Register from './containers/User/Register/Register'
-import Films from './containers/Films/Films'
+import Films from './containers/Films/FilmsCards'
 import Footer from './components/Footer/Footer'
 import 'bootstrap/dist/css/bootstrap.min.css';
 import Home from './containers/Home/Home'
