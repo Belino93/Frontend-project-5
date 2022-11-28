@@ -1,5 +1,9 @@
 import axios from "axios";
 const baseUrl = "http://localhost:3005";
+// let config = {
+//   headers: { Authorization: "Bearer " + localStorageToken }
+// }
+
 
 export const createUser = async (user) => {
   const userCreated = await axios.post(baseUrl + "/auth/register", {
@@ -23,4 +27,14 @@ export const loginUser = async (user) => {
 export const bringMovies = async () => {
   const movies = await axios.get(baseUrl + '/movie/')
   return movies
+}
+
+export const bringUser = async (localStorageToken) => {
+  let config = {
+    headers: { Authorization: "Bearer " + localStorageToken }
+  }
+
+  const resp = await axios.get(baseUrl + '/user/get', config)
+
+  return resp
 }
