@@ -7,7 +7,7 @@ function Footer() {
     <Card className="text-center">
       <Card.Header className="bg-dark">Featured</Card.Header>
       <Card.Body>
-        <Card.Title ClassName="bg-light">Spial title treatment</Card.Title>
+        <Card.Title className="bg-light">Spial title treatment</Card.Title>
         <Card.Text>
           With supporting text below as a natural lead-in to additional content.
         </Card.Text>

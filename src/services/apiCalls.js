@@ -29,7 +29,7 @@ export const bringMovies = async () => {
   return movies
 }
 
-export const bringUser = async (localStorageToken) => {
+export const getProfile = async (localStorageToken) => {
   let config = {
     headers: { Authorization: "Bearer " + localStorageToken }
   }

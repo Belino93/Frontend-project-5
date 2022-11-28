@@ -1,0 +1,14 @@
+.container-profile {
+    height: 80vh;
+    width: 100vw;
+    background-color: antiquewhite;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.profile-card {
+    width: 50%;
+    height: 50%;
+    text-align: center;
+}

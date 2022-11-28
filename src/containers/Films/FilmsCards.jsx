@@ -3,7 +3,7 @@ import React from "react";
 const FilmsCards = ({ movies }) => {
   return (
     <div className="container">
-      <div className="row">
+      {/* <div className="row">
         {movies.map((item, index) => (
           <div key={index} className="col-lg-3 col-md-6 col-sm-12 mb-4">
             <div className="card" style={{ minWidth: "200px" }}>
@@ -17,7 +17,7 @@ const FilmsCards = ({ movies }) => {
             </div>
           </div>
         ))}
-      </div>
+      </div> */}
     </div>
   );
 };
