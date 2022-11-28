@@ -38,3 +38,12 @@ export const getProfile = async (localStorageToken) => {
 
   return resp
 }
+
+export const getLeaseById = async (localStorageToken) => {
+  let config = {
+    headers: { Authorization: "Bearer " + localStorageToken }
+  }
+
+  const resp = await axios.get(baseUrl + '/lease/get', config)
+  return resp
+}

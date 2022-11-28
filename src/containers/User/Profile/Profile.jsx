@@ -1,4 +1,4 @@
-import {getProfile} from '../../../services/apiCalls'
+import {getProfile, getLeaseById} from '../../../services/apiCalls'
 import { useState, useEffect } from "react";
 import { useNavigate } from "react-router-dom";
 import './Profile.css'
@@ -6,13 +6,24 @@ import './Profile.css'
 
 function Profile() {
   const navigate = useNavigate();
+  const tokenjw = localStorage.getItem('token')
+
   const [profile, setProfile] = useState({
     name: '',
     surname: '',
-    password: ''
+    password: '',
+    email:'',
   })
 
-  const tokenjw = localStorage.getItem('token')
+  const [leases, setLeases] = useState([])
+
+  useEffect(() => {
+    getLeaseById(tokenjw).then((leaseData) => {
+      setLeases(leaseData.data)
+    })
+    
+  }, [])
+
 
   useEffect(() => {
     if(!tokenjw){
@@ -23,6 +34,7 @@ function Profile() {
         return { ...previousState,
            name: data.data.name,
            surname: data.data.surname,
+           email: data.data.email
           }
       })
     })
@@ -34,6 +46,16 @@ function Profile() {
       <div className='profile-card'>
         <h1>Profile</h1>
         <h3>Hello, {profile.name} {profile.surname}</h3>
+        <p>{profile.email}</p>
+        <p>ACTIVE RENTALS</p>
+        <div>
+          {leases.map((lease) => {
+            <div>
+              <img src='{}' />
+              <p>{lease.Movies.title}</p>
+              </div>
+          })}
+        </div>
       </div>
     </div>
   )
