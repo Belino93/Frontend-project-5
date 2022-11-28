@@ -5,6 +5,7 @@ import './Profile.css'
 
 
 function Profile() {
+  const imgUrl = "https://image.tmdb.org/t/p/w200/"
   const navigate = useNavigate();
   const tokenjw = localStorage.getItem('token')
 
@@ -48,13 +49,15 @@ function Profile() {
         <h3>Hello, {profile.name} {profile.surname}</h3>
         <p>{profile.email}</p>
         <p>ACTIVE RENTALS</p>
-        <div>
-          {leases.map((lease) => {
-            <div>
-              <img src='{}' />
-              <p>{lease.Movies.title}</p>
+        <div className='container-rental-active'>
+          {leases.map((lease, index) => (
+            <div className='rental-active' key={index}>
+              <img src={imgUrl+lease.Movies[0].poster} />
+              <p>{lease.Movies[0].title}</p>
+              <p>Rental date: {lease.createdAt}</p>
+              <button>Return</button>
               </div>
-          })}
+          ))}
         </div>
       </div>
     </div>

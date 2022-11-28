@@ -1,5 +1,5 @@
 .container-profile {
-    height: 80vh;
+    height: 100%;
     width: 100vw;
     background-color: antiquewhite;
     display: flex;
@@ -12,3 +12,15 @@
     height: 50%;
     text-align: center;
 }
+
+.container-rental-active{
+    display: flex;
+    flex-wrap: wrap;
+    background-color: antiquewhite;
+    width: 100vw;
+}
+
+.rental-active {
+    margin: 2em;
+}
+
