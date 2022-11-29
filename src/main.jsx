@@ -10,6 +10,7 @@ import Films from './containers/Films/FilmsCards'
 import Footer from './components/Footer/Footer'
 import 'bootstrap/dist/css/bootstrap.min.css';
 
+
 ReactDOM.createRoot(document.getElementById('root')).render(
   
   <React.StrictMode>
@@ -24,7 +25,7 @@ ReactDOM.createRoot(document.getElementById('root')).render(
 
     </Routes>
     <Footer/>
-
+  
     </BrowserRouter>
   </React.StrictMode>
   

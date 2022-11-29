@@ -1,9 +1,7 @@
 
-
-.main-footer {
-  color: white;
+.Container {
   background-color: black;
-  padding-top: 3em;
+  padding-top: 10em;
   position: relative;
   bottom: 0;
   width: 100%;
