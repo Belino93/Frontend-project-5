@@ -11,6 +11,7 @@ import Footer from './components/Footer/Footer'
 import 'bootstrap/dist/css/bootstrap.min.css';
 
 
+
 ReactDOM.createRoot(document.getElementById('root')).render(
   
   <React.StrictMode>
@@ -22,6 +23,8 @@ ReactDOM.createRoot(document.getElementById('root')).render(
       <Route path='/register' element={<Register />} />
       <Route path='/films' element={<Films/>} />
       <Route path='/login' element={<Login />} />
+      
+
 
     </Routes>
     <Footer/>
