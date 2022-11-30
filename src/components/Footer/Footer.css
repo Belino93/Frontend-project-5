@@ -1,16 +1,21 @@
 
 .footer-container {
   background-color: black;
-  padding-top: 20em;
+  
   bottom: 0;
   width: 100%;
   display: flex;
   justify-content: space-evenly;
-  border-top: rgba(125, 120, 120, 0.727) solid 1px ;
-
-
+  border-top: rgba(11, 5, 5, 0.201) solid 1px ;
 
 }
+
+.p-footer{
+  color: rgb(116, 111, 111);
+  font-size: 1.5em;
+  
+}
+
 
 
 /* NAMES */
@@ -27,17 +32,13 @@
 .logos-container{
   display: flex;
   justify-content: center;
-
-
 }
 
 .bi {
   color: rgb(116, 111, 111);
   margin-left: 20px;
-
- 
-  
 }
+
 .bi:hover {
   color: rgb(255, 255, 255);
 }

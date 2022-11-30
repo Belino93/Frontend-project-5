@@ -15,7 +15,7 @@ function NetworkRequest() {
     return new Promise((resolve) => setTimeout(resolve, 2000));
 }
 
-function DiscoverButton()  {
+function DiscoverButton() {
     const [isLoading, setLoading] = useState(false);
 
     useEffect(() => {
@@ -30,7 +30,7 @@ function DiscoverButton()  {
 
     return (
         <Button
-            variant="primary"
+            className="discover-button"
             disabled={isLoading}
             onClick={!isLoading ? handleClick : null}
         >
@@ -41,19 +41,19 @@ function DiscoverButton()  {
 
 
 
+// HOME
 
 function Home() {
     return (
         <Container >
             <Row className='welcome-container d-flex flex-column p-5' >
-
                 <Col sm md lg={true} >
                     <div className='welcome-inner-container d-flex flex-column '>
                         <h6>Discover Abelino's</h6>
                         <h1 className="frase">Your streaming services, <br /> finally in one place!</h1>
                         <p>Meet ABELINO, the cheapest app that combines all the most popular streaming services for easy search <br /> and discovery anywhere you watch movies and shows.</p>
-                        <DiscoverButton className="frase" onClick={() => useNavigate ("/films")}/>;
-                     
+                        <DiscoverButton onClick={() => useNavigate("/login")} />;  {/*   NEED TO SET UP*/}
+
                     </div>
                 </Col>
 

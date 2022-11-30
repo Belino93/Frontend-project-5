@@ -30,7 +30,7 @@ const FilmsCards = () => {
       return(
           <div className="film-card">
             <img className="" src={`https://image.tmdb.org/t/p/w200/${movie.poster}`} alt="Poster" />
-           
+          
             <h3 className="" src="">{movie.title}</h3>
 
           </div>
