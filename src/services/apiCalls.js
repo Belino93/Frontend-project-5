@@ -47,3 +47,11 @@ export const getLeaseById = async (localStorageToken) => {
   const resp = await axios.get(baseUrl + '/lease/get', config)
   return resp
 }
+
+export const updateLease = async (localStorageToken, lease_id) => {
+  let config = {
+    headers: { Authorization: "Bearer " + localStorageToken }
+  }
+  const resp = await axios.patch(baseUrl + '/lease/update',{lease_id:lease_id}, config)
+  return resp
+}
