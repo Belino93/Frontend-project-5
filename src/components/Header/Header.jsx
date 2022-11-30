@@ -11,6 +11,7 @@ function Header() {
     <Navbar expand="large" bg="black" variant="dark">
       <Container>
         <Nav className="my-4 d-flex flex-row me-auto bg-black "> 
+        
           <div className="link-design" onClick={() => navigate("/")}>
             Home
           </div>

@@ -28,10 +28,10 @@ const FilmsCards = () => {
       <div>
         {movies.map((movie) =>{
       return(
-          <div>
-            <img src={`https://image.tmdb.org/t/p/w200/${movie.poster}`} alt="Poster" />
+          <div className="film-card">
+            <img className="" src={`https://image.tmdb.org/t/p/w200/${movie.poster}`} alt="Poster" />
            
-            <h3 src="">{movie.title}</h3>
+            <h3 className="" src="">{movie.title}</h3>
 
           </div>
 )        })}

@@ -1,8 +1,43 @@
 
-.Container {
+.footer-container {
   background-color: black;
-  padding-top: 10em;
-  position: relative;
+  padding-top: 20em;
   bottom: 0;
   width: 100%;
+  display: flex;
+  justify-content: space-evenly;
+  border-top: rgba(125, 120, 120, 0.727) solid 1px ;
+
+
+
+}
+
+
+/* NAMES */
+.footer-links {
+  color: rgb(116, 111, 111);
+}
+
+.footer-links:hover {
+  color: white;
+}
+
+
+/* SOCIAL LINKS */
+.logos-container{
+  display: flex;
+  justify-content: center;
+
+
+}
+
+.bi {
+  color: rgb(116, 111, 111);
+  margin-left: 20px;
+
+ 
+  
+}
+.bi:hover {
+  color: rgb(255, 255, 255);
 }
