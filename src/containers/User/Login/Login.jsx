@@ -5,9 +5,13 @@ import { Button, Form, Input } from "antd";
 import { useState, useEffect } from "react";
 import { useNavigate } from "react-router-dom";
 import { loginUser } from "../../../services/apiCalls";
+import { useJwt } from "react-jwt";
 
 function Login() {
   const navigate = useNavigate();
+  const tokenjw = localStorage.getItem("token");
+  const { decodedToken } = useJwt(tokenjw);
+
   const [user, setUser] = useState({
     email: "",
     password: "",
@@ -16,7 +20,12 @@ function Login() {
     error: "",
   });
 
-
+  useEffect(() => {
+    if (localStorage.getItem("token")) {
+      navigate("/");
+    }
+    return;
+  }, []);
 
   const inputHandler = (e) => {
     setUser((prevState) => ({
@@ -24,15 +33,6 @@ function Login() {
       [e.target.name]: e.target.value,
     }));
   };
-
-  useEffect(() => {
-    if (localStorage.getItem("token")) {
-      navigate("/");
-    }
-    return
-  },[])
-
-  
 
   const clickHandler = (user) => {
     loginUser(user)
@@ -42,7 +42,7 @@ function Login() {
           ...prevState,
           error: "",
         }));
-        navigate('/')
+        navigate("/");
       })
       .catch((error) =>
         setLoginError((prevState) => ({
@@ -51,7 +51,6 @@ function Login() {
         }))
       );
   };
-
 
   return (
     <div className="login-container">

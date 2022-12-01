@@ -23,6 +23,13 @@ function Register() {
     password2Error: "",
   });
 
+  useEffect(() => {
+    if (localStorage.getItem("token")) {
+      navigate("/");
+    }
+    return;
+  }, []);
+
   const inputHandler = (e) => {
     setUser((prevState) => ({
       ...prevState,
@@ -43,7 +50,7 @@ function Register() {
     }));
   };
 
-  const send = async (user, userError) => {
+  const send = (user, userError) => {
     if (
       user.name !== "" &&
       userError.nameError === "" &&
