@@ -17,7 +17,7 @@ function Profile() {
   if (!tokenjw) {
     navigate("/login");
   }
-
+  const [leases, setLeases] = useState([]);
   const [refund, setRefund] = useState(false);
   const [profile, setProfile] = useState({
     name: "",
@@ -39,7 +39,7 @@ function Profile() {
     });
   }
 
-  const [leases, setLeases] = useState([]);
+  
 
   useEffect(() => {
     getLeaseById(tokenjw).then((leaseData) => {
@@ -58,7 +58,12 @@ function Profile() {
     getLeaseById(tokenjw).then((leaseData) => {
       setLeases(leaseData.data);
     });
+    console.log(leases)
   }, [refund]);
+
+
+  
+
 
   if (leases.length > 0) {
     return (
@@ -77,7 +82,7 @@ function Profile() {
               <div className="rental-active" key={index}>
                 <img
                   className="rental-img"
-                  src={imgUrl + lease.Movies[0].poster}
+                  // src={imgUrl + lease.Movies[0].poster}
                 />
                 <div className="rental-title">
                   {lease.Movies[0].title.slice(0, 20) + "..."}
