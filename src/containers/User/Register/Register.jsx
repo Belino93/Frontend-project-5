@@ -76,18 +76,15 @@ function Register() {
 
   return (
     //BODY container BLACK 
-    // WHOLE CONTAINER WHITE photos-movie*/
+    // INNER CONTAINER WHITE photos-movie*/
     <div className="register-container">
-
-
-      {/* INNER CONTAINER   */}
       <div className="inner-container my-3">
 
         {/* TEXT CONTAINER */}
         <div className="text-container">
-          <p>START FOR FREE</p>
+          <h6>START FOR FREE</h6>
           <h2>Create a new account.</h2>
-          <p>Already a Member? <span><a href="">Log In</a></span></p>
+
         </div>
         {/* ------------------------------------------------------------------ */}
         {/* INPUT'S MAIN CONTAINER */}
@@ -144,6 +141,14 @@ function Register() {
           <Button className="register-button" onClick={() => send(user, userError)}>
             Register
           </Button>
+          <br />
+          Or{" "}
+          <span
+            className="navigator-link"
+            onClick={() => navigate("/login")}
+          >
+            Log in
+          </span>
 
         </div>
 
