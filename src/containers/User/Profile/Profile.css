@@ -1,26 +1,44 @@
 .container-profile {
-    height: 100%;
-    width: 100vw;
-    background-color: antiquewhite;
-    display: flex;
-    justify-content: center;
-    align-items: center;
+  background-color: antiquewhite;
+  display: flex;
+  flex-direction: column;
 }
 
 .profile-card {
-    width: 50%;
-    height: 50%;
-    text-align: center;
+  text-align: center;
 }
 
-.container-rental-active{
-    display: flex;
-    flex-wrap: wrap;
-    background-color: antiquewhite;
-    width: 100vw;
+.container-rental-active {
+  display: flex;
+  flex-wrap: wrap;
+  background-color: antiquewhite;
+  width: 100vw;
+  align-items: center;
+  justify-content: center;
 }
 
 .rental-active {
-    margin: 2em;
+  margin: 2em;
+  border: 1px solid black;
+  border-top: 1px solid black;
+  border-radius: 15px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  width: 12.1em;
 }
+
+.rental-img {
+  width: 12em;
+  border-radius: 15px;
+}
+
+.rental-title {
+  word-wrap: break-word;
+  font-weight: bold;
+}
+
+
+
 
