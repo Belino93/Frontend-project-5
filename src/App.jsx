@@ -17,49 +17,51 @@ function App() {
   })
 
 
-  //SEARCH REQUEST
-  // const search = (e) => {
-  //   if (e.key === "Enter") {
-  //     get.axios(baseUrl + "&s=" + state.s).then(({ data }) => {
-  //       let resultados = data.Search;
 
-  //       setState(prevState => {
-  //         return { ...prevState, resultados: resultados }
-  //       })
-  //     });
-  //   }
-  // }
+//SEARCH REQUEST
+//   const search = (e) => {
+//     if (e.key === "Enter") {
+//       get.axios(baseUrl + "&s=" + state.s).then(({ data }) => {
+//     let resultados = data.Search;
+
+//     setState(prevState => {
+//       return { ...prevState, resultados: resultados }
+//     })
+//     });
+//   }
+// }
 
   // -----------
 
-  // const handleInput = (e) => {
-  //   let s = e.target.value;
 
-  //   setState(prevState => {
-  //     return { ...prevState, s: s }
-  //   })
+// const handleInput = (e) => {
+//   let s = e.target.value;
 
-  // }
-
+//   setState(prevState => {
+//     return { ...prevState, s: s }
+//   })
+  
+// }
 
 //CARDS
  
-// const [movies, setMovies] = useState([]);
-// //const [info, setInfo] = useState({});
-// const baseUrl = "https://localhost:3005/movie/";
-// const fetchMovies = ( baseUrl) => {
-//   axios
-//     .get(baseUrl)
-  
-//     .catch((error) => {
-//       console.log(error);
-//     });
-// };
-// useEffect(() => {
-//   fetchMovies(baseUrl);
-// }, []);
+  // const [movies, setMovies] = useState([]);
+  // //const [info, setInfo] = useState({});
+  // const baseUrl = "https://localhost:3005/movie/";
+
+  // const fetchMovies = ( baseUrl) => {
+  //   axios
+  //     .get(baseUrl)
+    
+  //     .catch((error) => {
+  //       console.log(error);
+  //     });
+  // };
 
 
+  // useEffect(() => {
+  //   fetchMovies(baseUrl);
+  // }, []);
 
   return (
     <div className="App">
@@ -71,6 +73,7 @@ function App() {
       <Resultados resultados={state.resultados} /> */}
         {/* <MoviesCards /> 
         <FilmsCards movies={movies} /> */}
+
 
 
       </main>
