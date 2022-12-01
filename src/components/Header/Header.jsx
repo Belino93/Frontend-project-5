@@ -6,6 +6,7 @@ import Navbar from "react-bootstrap/Navbar";
 
 function Header() {
   const navigate = useNavigate();
+
   const token = localStorage.getItem( 'token')
 const {decodedToken} = useJwt (token)
 
@@ -16,19 +17,26 @@ navigate('/');
 
 if (decodedToken) {
   return (
-    <Navbar bg="light" variant="light">
+    <Navbar collapseOnSelect expand="lg" bg="black" variant="dark">
       <Container>
-        <Nav className="me-auto">
-        <div className="link-design" onClick={() => navigate("/")}>Home</div>
-        <div className="link-design" onClick={() => navigate("/films")}>Films</div>
-        <div className="link-design" onClick={() => navigate("/profile")}>{decodedToken.name}</div>
-        <div className="link-design-out" onClick={() => logout()}>Logout</div>
 
-        </Nav>
+        <Navbar.Brand href="#home">React-Bootstrap</Navbar.Brand>
+        <Navbar.Toggle aria-controls="responsive-navbar-nav" />
+        <Navbar.Collapse id="responsive-navbar-nav">
+          <Nav className="me-auto">
+            <Nav.Link className="link-design" onClick={() => navigate("/")}>Home</Nav.Link>
+            <Nav.Link className="link-design" onClick={() => navigate("/films")}>Films</Nav.Link>
+            <Nav.Link className="link-design" onClick={() => navigate("/register")}>Register</Nav.Link>
+            <Nav.Link className="link-design" onClick={() => navigate("/login")}>Login</Nav.Link>
+          </Nav>
+        </Navbar.Collapse>
+
+
       </Container>
     </Navbar>
   );
 }
+
 
   return (
     <Navbar collapseOnSelect expand="lg" bg="black" variant="dark">

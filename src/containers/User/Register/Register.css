@@ -1,10 +1,27 @@
+body {
+  background-color: black;
+}
+
 .register-container {
+  border: 1px solid rgb(245, 244, 244);
   display: flex;
   justify-content: center;
   align-items: center;
   flex-direction: column;
-  width: 100vw;
-  height: 85vh;
+  margin: auto;
+  width: 80vw;
+  height: 80vh;
+  border-radius: 10px;
+}
+
+.text-container{
+  display: grid;
+  grid-template-columns: 1fr;
+  grid-template-rows: 1fr;
+  
+  border: 1px solid rgb(245, 244, 244);
+  color: whitesmoke;
+
 }
 
 .input-error {

@@ -12,6 +12,8 @@ import 'bootstrap/dist/css/bootstrap.min.css';
 import Home from './containers/Home/Home'
 import Profile from './containers/User/Profile/Profile'
 
+
+
 ReactDOM.createRoot(document.getElementById('root')).render(
   
   <React.StrictMode>
@@ -23,12 +25,14 @@ ReactDOM.createRoot(document.getElementById('root')).render(
       <Route path='/register' element={<Register />} />
       <Route path='/films' element={<Films/>} />
       <Route path='/login' element={<Login />} />
+
       <Route path='/home' element={<Home />} />
       <Route path='/profile' element={<Profile />} />
 
+
     </Routes>
     <Footer/>
-
+  
     </BrowserRouter>
   </React.StrictMode>
   

@@ -1,9 +1,10 @@
 import React, { useEffect, useState } from "react";
-import axios from "axios"
 import './App.css'
-import Search from './containers/Search/Search'
-import Resultados from './containers/Search/Resultados'
-import FilmsCards from "./containers/Films/FilmsCards";
+import axios from "axios"
+import Home from "./containers/Home/Home";
+// import Search from './containers/Search/Search'
+// import Resultados from './containers/Search/Resultados'
+// import FilmsCards from "./containers/Films/FilmsCards";
 
 function App() {
 
@@ -14,6 +15,7 @@ function App() {
 
 
   })
+
 
 
 //SEARCH REQUEST
@@ -29,7 +31,8 @@ function App() {
 //   }
 // }
 
-// -----------
+  // -----------
+
 
 // const handleInput = (e) => {
 //   let s = e.target.value;
@@ -60,25 +63,23 @@ function App() {
   //   fetchMovies(baseUrl);
   // }, []);
 
-
-  
-return (
-  <div className="App">
-    <main className='App-main'>
-
-      <h1>ABELINO'S MOVIES</h1>
-      {/* <Search handleInput={handleInput} search={search} /> */}
-      {/* <Resultados resultados={state.resultados} /> */}
-      {/* <MoviesCards /> */}
-      {/* <FilmsCards movies={movies} /> */}
-      
-      
+  return (
+    <div className="App">
+      <main>
+        <Home />
 
 
-    </main>
+        {/* <Search handleInput={handleInput} search={search} />
+      <Resultados resultados={state.resultados} /> */}
+        {/* <MoviesCards /> 
+        <FilmsCards movies={movies} /> */}
 
-  </div>
-);
+
+
+      </main>
+
+    </div>
+  );
 }
 
 export default App
