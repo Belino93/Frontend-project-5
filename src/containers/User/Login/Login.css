@@ -1,0 +1,25 @@
+.login-container {
+  display: flex;
+  width: 100vw;
+  height: 85vh;
+  justify-content: center;
+  align-items: center;
+}
+
+.button-login {
+margin-right: 1.5em;
+
+}
+
+.form-container {
+  width: 30%;
+  
+}
+.navigator-link{
+  color: blue;
+}
+
+.login-error {
+  text-align: center;
+  color: red;
+}

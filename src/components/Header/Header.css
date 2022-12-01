@@ -1,0 +1,17 @@
+.header-container {
+  background-color: aquamarine;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  
+}
+
+.link-design {
+  margin-right: 2em;
+  cursor: pointer;
+}
+
+.link-design-out {
+  cursor: pointer;
+  color: red;
+}
