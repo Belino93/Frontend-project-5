@@ -68,7 +68,14 @@ function Register() {
   };
 
   return (
-    <div className="register-container">
+    <div className="register-container my-3">
+      <div className="text-container">
+        <p>START FOR FREE</p>
+        <h1>Create a new account.</h1>
+        <p>Already a Member? <span><a href="">Log In</a></span></p>
+
+      </div>
+
       <div className="input-error">{userError.nameError}</div>
 
       <Input
