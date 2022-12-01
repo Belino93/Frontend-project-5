@@ -1,0 +1,15 @@
+/* Container de todas las pelis */
+.film-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+}
+
+/* Container de cada peli */
+.film-card {
+    margin: 1em;
+    cursor: pointer;
+}
+
+

@@ -10,16 +10,16 @@ const Footer = () => <footer className="footer-container page-footer bg-black  f
     <div className="footer-links text-center">
         <h4>Liza Castrillón</h4>
         <div className='logos-container'>
-            <a href="https://www.linkedin.com/in/lizacastdiaz/"><h1 class="bi bi-linkedin"></h1></a>
-            <a href="https://github.com/LizaCastDiaz"><h1 class="bi bi-github"></h1></a>
+            <a href="https://www.linkedin.com/in/lizacastdiaz/"><h1 className="bi bi-linkedin"></h1></a>
+            <a href="https://github.com/LizaCastDiaz"><h1 className="bi bi-github"></h1></a>
         </div>
     </div>
     <p className='p-footer'> Created by</p>
     <div className="footer-links text-center py-3">
         <h4>Abel Madrid</h4>
         <div className='logos-container'>
-            <a href="https://www.linkedin.com/in/abel-madrid-65a575218/"><h1 class="bi bi-linkedin bi-sm"></h1></a>
-            <a href="https://github.com/Belino93"><h1 class="bi fa-light bi-github"></h1></a>
+            <a href="https://www.linkedin.com/in/abel-madrid-65a575218/"><h1 className="bi bi-linkedin bi-sm"></h1></a>
+            <a href="https://github.com/Belino93"><h1 className="bi fa-light bi-github"></h1></a>
         </div>
     </div>
 
