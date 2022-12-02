@@ -14,8 +14,8 @@ function App() {
   })
 
   return (
-    <div className="App">
-      <main>
+    <div className="App-home">
+      <main className="main-app">
         <Home />
       </main>
 
