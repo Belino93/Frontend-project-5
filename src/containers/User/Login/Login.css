@@ -3,35 +3,51 @@
   padding: 0;
   box-sizing: border-box;
 }
-body {
-  background-color: rgb(4, 2, 2);
-}
 
+
+  /* background: url(https://www.themoviedb.org/t/p/w1920_and_h800_multi_faces/jsoz1HlxczSuTx0mDl2h0lxy36l.jpg);
+  background-repeat: no-repeat;
+  background-size: auto;
+  background-position-x: right; */
 
 
 /* INNER CONTAINER */
 
 .login-container {
-  background: url(https://hotstar-88d5e.web.app/static/media/login-background.05b1a1b3.jpg);
+  background: url(https://www.themoviedb.org/t/p/w1920_and_h800_multi_faces/jsoz1HlxczSuTx0mDl2h0lxy36l.jpg);
   background-repeat: no-repeat;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    margin: auto;
+    width: 100vw;
+    height: 90vh;
+    border-radius: 10px;
+  }
+.login-background{
+ 
+  background: linear-gradient(94deg, rgba(2,0,36,0.5900735294117647) 0%, rgba(115,24,158,0.8897934173669468) 53%, rgba(54,73,198,1) 110%);
   /* border: 1px solid rgb(245, 244, 244); */
   display: flex;
   justify-content: center;
   align-items: center;
   flex-direction: column;
   margin: auto;
-  width: 85vw;
+  width: 100vw;
   height: 90vh;
-  border-radius: 10px;
+  
+
 }
 
+
 .form-container {
-/* border: 1px solid rgb(246, 249, 246); */
-background-color: #adabae6b;
+ /* border: 1px solid rgb(246, 249, 246);  */
+ background-color: #ded9e061;
 box-shadow: 5px 5px 5px 0px #423f3f, inset 4px 4px 15px 0px #3a3535, ;
-border-radius: 10px;
+border-radius: 10px; 
 display: flex;
-justify-content: center;
+justify-content: flex-end;
 flex-direction: column;
 height: 80%;
 margin: auto;
@@ -44,7 +60,6 @@ padding: 5px 10px;
   font-weight: bold;
   color: white;
   font-family: 'Inter', sans-serif;
-
 }
 #text {
   font-size: 1.2rem;
