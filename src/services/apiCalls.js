@@ -1,5 +1,5 @@
 import axios from "axios";
-const baseUrl = "http://localhost:3005";
+const baseUrl = "http://localhost:3006";
 // let config = {
 //   headers: { Authorization: "Bearer " + localStorageToken }
 // }
