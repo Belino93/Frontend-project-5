@@ -13,6 +13,7 @@ function FilmDetail() {
     newLease(jwt,film_id)
     .then((res) => {console.log(res);})
     .catch((error) => {console.log(error);});
+    navigate('/films')
   };
 
   if (selectedFilm?.movie_id !== undefined) {

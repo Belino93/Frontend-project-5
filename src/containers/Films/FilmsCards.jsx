@@ -18,7 +18,6 @@ const FilmsCards = () => {
     if(movies.length === 0){
       bringMovies()
     .then ((movies) =>{
-      console.log(movies.data);
       return setMovies(movies.data)
       
     })
