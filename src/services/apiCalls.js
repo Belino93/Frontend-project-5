@@ -1,9 +1,5 @@
 import axios from "axios";
 const baseUrl = "http://localhost:3005";
-// let config = {
-//   headers: { Authorization: "Bearer " + localStorageToken }
-// }
-
 
 export const createUser = async (user) => {
   const userCreated = await axios.post(baseUrl + "/auth/register", {
@@ -25,33 +21,50 @@ export const loginUser = async (user) => {
 };
 
 export const bringMovies = async () => {
-  const movies = await axios.get(baseUrl + '/movie/')
-  return movies
-}
+  const movies = await axios.get(baseUrl + "/movie/");
+  return movies;
+};
 
 export const getProfile = async (localStorageToken) => {
   let config = {
-    headers: { Authorization: "Bearer " + localStorageToken }
-  }
+    headers: { Authorization: "Bearer " + localStorageToken },
+  };
 
-  const resp = await axios.get(baseUrl + '/user/get', config)
+  const resp = await axios.get(baseUrl + "/user/get", config);
 
-  return resp
-}
+  return resp;
+};
 
 export const getLeaseById = async (localStorageToken) => {
   let config = {
-    headers: { Authorization: "Bearer " + localStorageToken }
-  }
+    headers: { Authorization: "Bearer " + localStorageToken },
+  };
 
-  const resp = await axios.get(baseUrl + '/lease/get', config)
-  return resp
-}
+  const resp = await axios.get(baseUrl + "/lease/get", config);
+  return resp;
+};
 
 export const updateLease = async (localStorageToken, lease_id) => {
   let config = {
-    headers: { Authorization: "Bearer " + localStorageToken }
-  }
-  const resp = await axios.patch(baseUrl + '/lease/update',{lease_id:lease_id}, config)
+    headers: { Authorization: "Bearer " + localStorageToken },
+  };
+  const resp = await axios.patch(
+    baseUrl + "/lease/update",
+    { lease_id: lease_id },
+    config
+  );
+  return resp;
+};
+
+export const newLease = async (localStorageToken, movie_id) => {
+  console.log(movie_id);
+  let config = {
+    headers: { Authorization: "Bearer " + localStorageToken },
+  };
+  const resp = await axios.post(
+    baseUrl + "/lease/new",
+    { movie_id: movie_id },
+    config
+  );
   return resp
-}
+};

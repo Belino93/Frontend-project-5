@@ -8,7 +8,7 @@ import { useNavigate } from "react-router-dom";
 import "./Profile.css";
 import Container from "react-bootstrap/Container";
 import Row from "react-bootstrap/Row";
-import Col from "react-bootstrap/Col";
+import { Spinner } from "react-bootstrap";
 
 function Profile() {
   const imgUrl = "https://image.tmdb.org/t/p/w200/";
@@ -41,11 +41,13 @@ function Profile() {
 
   const [leases, setLeases] = useState([]);
 
-  useEffect(() => {
-    getLeaseById(tokenjw).then((leaseData) => {
-      setLeases(leaseData.data);
-    });
-  }, []);
+  // useEffect(() => {
+  //   if(leases.length === 0)
+  //   getLeaseById(tokenjw).then((leaseData) => {
+  //     setLeases(leaseData.data)
+  //   })
+  //   ;
+  // }, []);
 
   const clickHandler = (lease_id) => {
     updateLease(tokenjw, lease_id).then((res) => {
@@ -56,9 +58,30 @@ function Profile() {
 
   useEffect(() => {
     getLeaseById(tokenjw).then((leaseData) => {
-      setLeases(leaseData.data);
+      console.log(leaseData.data);
+      setLeases(leaseData.data[0]);
     });
   }, [refund]);
+
+  if (leases.length === 0) {
+    return (
+      <Container fluid className="container-profile">
+        <Row>
+          <div className="profile-card">
+            <h3>Your profile, {profile.name}</h3>
+            <p>{profile.email}</p>
+          </div>
+        </Row>
+
+        <Row>
+          <p>YOUR ACTIVE RENTALS</p>
+          <div className="film-container">
+            <Spinner animation="border" variant="white" />
+          </div>
+        </Row>
+      </Container>
+    );
+  }
 
   if (leases.length > 0) {
     return (
@@ -77,10 +100,10 @@ function Profile() {
               <div className="rental-active" key={index}>
                 <img
                   className="rental-img"
-                  src={imgUrl + lease.Movies[0].poster}
+                  src={imgUrl + lease.poster}
                 />
                 <div className="rental-title">
-                  {lease.Movies[0].title.slice(0, 20) + "..."}
+                  {lease.title + "..."}
                 </div>
                 <p>Rental date: {lease.createdAt}</p>
                 <button

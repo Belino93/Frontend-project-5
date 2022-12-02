@@ -1,37 +1,48 @@
 import React from "react";
 import { useState, useEffect } from "react"
-import axios from "axios";
+import {bringMovies} from '../../services/apiCalls'
+import './FilmsCards.css'
+import { Spinner } from 'react-bootstrap';
+import { useDispatch } from "react-redux";
+import { useNavigate } from "react-router-dom";
+import {addFilm} from './filmSlice'
 
 const FilmsCards = () => {
-  const [movies, setMovies] = useState([])
-  const bringMovies = async () => {
+  const dispatch = useDispatch();
+  const navigate = useNavigate();
 
-    const movies = await axios.get("http://localhost:3006/movie")
-    return movies
-  }
+  const [movies, setMovies] = useState([])
+
+
   useEffect(() => {
     if(movies.length === 0){
       bringMovies()
     .then ((movies) =>{
-      console.log(movies.data);
       return setMovies(movies.data)
       
     })
     .catch (Error);
     }
-    
-
   } )
+
+  // Handlers
+  const clickHandler = (film) => {
+
+    dispatch(addFilm({...film, details: film}));
+
+    navigate('/filmDetails')
+
+  }
 
   if (movies.length > 0){
     return (
-      <div>
-        {movies.map((movie) =>{
+      <div className="film-container">
+        {movies.map((movie, index) =>{
       return(
-          <div className="film-card">
+          <div className="film-card" key={index} onClick={() => {clickHandler(movie)}} >
             <img className="" src={`https://image.tmdb.org/t/p/w200/${movie.poster}`} alt="Poster" />
           
-            <h3 className="" src="">{movie.title}</h3>
+            <p className="" src="">{movie.title.slice(0, 20) + "..."}</p>
 
           </div>
 )        })}
@@ -40,7 +51,7 @@ const FilmsCards = () => {
 
   }
 return (
-  <div><h1>pelis</h1></div>
+  <div className="film-container"><Spinner animation="border" variant="white"/></div>
 )
 };
 
