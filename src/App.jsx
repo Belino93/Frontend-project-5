@@ -43,25 +43,6 @@ function App() {
   
 // }
 
-//CARDS
- 
-  // const [movies, setMovies] = useState([]);
-  // //const [info, setInfo] = useState({});
-  // const baseUrl = "https://localhost:3005/movie/";
-
-  // const fetchMovies = ( baseUrl) => {
-  //   axios
-  //     .get(baseUrl)
-    
-  //     .catch((error) => {
-  //       console.log(error);
-  //     });
-  // };
-
-
-  // useEffect(() => {
-  //   fetchMovies(baseUrl);
-  // }, []);
 
   return (
     <div className="App">

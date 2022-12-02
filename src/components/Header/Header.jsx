@@ -57,31 +57,5 @@ if (decodedToken) {
   );
 }
 
-  // return (
-  //   <Navbar expand="large" bg="black" variant="dark">
-  //     <Container>
-  //       <Nav className="my-4 d-flex flex-row me-auto bg-black "> 
-        
-  //         <div className="link-design" onClick={() => navigate("/")}>
-  //           Home
-  //         </div>
-  //         <div className="link-design" onClick={() => navigate("/films")}>
-  //           Films
-  //         </div>
-  //         <div className="link-design" onClick={() => navigate("/register")}>
-  //           Register
-  //         </div>
-  //         <div className="link-design" onClick={() => navigate("/login")}>
-  //           Login
-  //         </div>
-  //         {/* <Nav.Link onClick={() => navigate('/')}>Home</Nav.Link>
-  //           <Nav.Link onClick={() => navigate('/films')}>Features</Nav.Link>
-  //           <Nav.Link onClick={() => navigate('/login')}>Login</Nav.Link>
-  //           <Nav.Link onClick={() => navigate('/register')}>Register</Nav.Link> */}
-  //       </Nav>
-  //     </Container>
-  //   </Navbar>
-  // );
-// }
 
 export default Header;
