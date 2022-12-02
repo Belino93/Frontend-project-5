@@ -51,9 +51,9 @@ function Home() {
                     <div className='welcome-inner-container d-flex flex-column '>
                         <h6>Discover Abelino's</h6>
                         <h1 className="frase">Your streaming services, <br /> finally in one place!</h1>
-                        <p>Meet ABELINO, the cheapest app that combines all the most popular streaming services for easy search <br /> and discovery anywhere you watch movies and shows.</p>
+                        <p>Meet ABELINO, the cheapest app that combines all the most popular streaming services for easy search <br /> and discovery anywhere you watch movies and shows...</p>
                         <DiscoverButton onClick={() => useNavigate("/login")} />;  {/*   NEED TO SET UP*/}
-
+ 
                     </div>
                 </Col>
 
