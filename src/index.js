@@ -11,7 +11,7 @@ import Footer from './components/Footer/Footer.jsx'
 import 'bootstrap/dist/css/bootstrap.min.css';
 import Home from './containers/Home/Home.jsx'
 import Profile from './containers/User/Profile/Profile.jsx'
-import FilmDetail from './containers/FilmDetail/FilmDetail.js'
+import FilmDetail from './containers/FilmDetail/FilmDetail.jsx'
 import store from './app/store.js'
 import { Provider } from 'react-redux'
 
