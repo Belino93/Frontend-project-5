@@ -75,60 +75,85 @@ function Register() {
   };
 
   return (
+    //BODY container BLACK 
+    // INNER CONTAINER WHITE photos-movie*/
     <div className="register-container">
-      <div className="input-error">{userError.nameError}</div>
+      <div className="inner-container my-3">
 
-      <Input
-        className="self-input"
-        name="name"
-        placeholder="Name"
-        onChange={(e) => inputHandler(e)}
-        onBlur={(e) => errorHandler(e)}
-      />
+        {/* TEXT CONTAINER */}
+        <div className="text-container">
+          <h6>START FOR FREE</h6>
+          <h2>Create a new account.</h2>
 
-      <div className="input-error">{userError.surnameError}</div>
+        </div>
+        {/* ------------------------------------------------------------------ */}
+        {/* INPUT'S MAIN CONTAINER */}
+        <div className="inputs-container">
+          <div className="input-error">{userError.nameError}</div>
 
-      <Input
-        className="self-input"
-        name="surname"
-        placeholder="Surname"
-        onChange={(e) => inputHandler(e)}
-        onBlur={(e) => errorHandler(e)}
-      />
+          <Input
+            className="self-input"
+            name="name"
+            placeholder="Name"
+            onChange={(e) => inputHandler(e)}
+            onBlur={(e) => errorHandler(e)}
+          />
 
-      <div className="input-error">{userError.emailError}</div>
+          <div className="input-error">{userError.surnameError}</div>
 
-      <Input
-        className="self-input"
-        name="email"
-        placeholder="Email"
-        onChange={(e) => inputHandler(e)}
-        onBlur={(e) => errorHandler(e)}
-      />
+          <Input
+            className="self-input"
+            name="surname"
+            placeholder="Surname"
+            onChange={(e) => inputHandler(e)}
+            onBlur={(e) => errorHandler(e)}
+          />
 
-      <div className="input-error">{userError.passwordError}</div>
+          <div className="input-error">{userError.emailError}</div>
 
-      <Input.Password
-        className="self-input"
-        name="password"
-        placeholder="Password"
-        onChange={(e) => inputHandler(e)}
-        onBlur={(e) => errorHandler(e)}
-      />
+          <Input
+            className="self-input"
+            name="email"
+            placeholder="Email"
+            onChange={(e) => inputHandler(e)}
+            onBlur={(e) => errorHandler(e)}
+          />
 
-      <div className="input-error">{userError.password2Error}</div>
+          <div className="input-error">{userError.passwordError}</div>
 
-      <Input.Password
-        className="self-input"
-        name="password2"
-        placeholder="Repeat your password"
-        onChange={(e) => inputHandler(e)}
-        onBlur={(e) => errorHandler(e)}
-      />
+          <Input.Password
+            className="self-input"
+            name="password"
+            placeholder="Password"
+            onChange={(e) => inputHandler(e)}
+            onBlur={(e) => errorHandler(e)}
+          />
 
-      <Button type="primary" onClick={() => send(user, userError)}>
-        Register
-      </Button>
+          <div className="input-error">{userError.password2Error}</div>
+
+          <Input.Password
+            className="self-input"
+            name="password2"
+            placeholder="Repeat your password"
+            onChange={(e) => inputHandler(e)}
+            onBlur={(e) => errorHandler(e)}
+          />
+          <Button className="register-button" onClick={() => send(user, userError)}>
+            Register
+          </Button>
+          <br />
+          Or{" "}
+          <span
+            className="navigator-link"
+            onClick={() => navigate("/login")}
+          >
+            Log in
+          </span>
+
+        </div>
+
+      </div>
+
     </div>
   );
 }

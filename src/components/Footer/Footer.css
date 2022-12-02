@@ -1,10 +1,44 @@
 
-
-.main-footer {
-  color: white;
+.footer-container {
   background-color: black;
-  padding-top: 3em;
-  position: relative;
+  
   bottom: 0;
   width: 100%;
+  display: flex;
+  justify-content: space-evenly;
+  border-top: rgba(11, 5, 5, 0.201) solid 1px ;
+
+}
+
+.p-footer{
+  color: rgb(116, 111, 111);
+  font-size: 1.5em;
+  
+}
+
+
+
+/* NAMES */
+.footer-links {
+  color: rgb(116, 111, 111);
+}
+
+.footer-links:hover {
+  color: white;
+}
+
+
+/* SOCIAL LINKS */
+.logos-container{
+  display: flex;
+  justify-content: center;
+}
+
+.bi {
+  color: rgb(116, 111, 111);
+  margin-left: 20px;
+}
+
+.bi:hover {
+  color: rgb(255, 255, 255);
 }
