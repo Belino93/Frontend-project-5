@@ -16,7 +16,7 @@ function Header() {
     navigate("/");
   };
 
-  if (decodedToken) {
+  if (decodedToken?.user_role === 2) {
     return (
       <Navbar collapseOnSelect expand="lg" bg="black" variant="dark">
         <Container>
@@ -46,12 +46,57 @@ function Header() {
                 Logout
               </Nav.Link>
               
+              
             </Nav>
           </Navbar.Collapse>
         </Container>
       </Navbar>
     );
   }
+  if (decodedToken?.user_role === 1) {
+    return (
+      <Navbar collapseOnSelect expand="lg" bg="black" variant="dark">
+        <Container>
+          <Navbar.Brand href="#home">React-Bootstrap</Navbar.Brand>
+          <Navbar.Toggle aria-controls="responsive-navbar-nav" />
+          <Navbar.Collapse id="responsive-navbar-nav">
+            <Nav className="me-auto">
+              <Nav.Link className="link-design" onClick={() => navigate("/")}>
+                Home
+              </Nav.Link>
+              <Nav.Link
+                className="link-design"
+                onClick={() => navigate("/films")}
+              >
+                Films
+              </Nav.Link>
+              <Nav.Link
+                className="link-design"
+                onClick={() => navigate("/profile")}
+              >
+                Profile
+              </Nav.Link>
+              <Nav.Link
+                className="link-design"
+                onClick={() => logout()}
+              >
+                Logout
+              </Nav.Link>
+              <Nav.Link
+                className="link-design"
+                onClick={() => navigate('/admin')}
+              >
+                Admin
+              </Nav.Link>
+              
+              
+            </Nav>
+          </Navbar.Collapse>
+        </Container>
+      </Navbar>
+    );
+  }
+
 
   return (
     <Navbar collapseOnSelect expand="lg" bg="black" variant="dark">

@@ -1,0 +1,19 @@
+.text {
+    color: white;
+}
+
+.container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+
+}
+
+.lease-card {
+    margin: 1em;
+    border: 1px solid white;
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+}

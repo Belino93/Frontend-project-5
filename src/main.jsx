@@ -14,6 +14,7 @@ import Profile from './containers/User/Profile/Profile'
 import FilmDetail from './containers/FilmDetail/FilmDetail'
 import store from './app/store'
 import { Provider } from 'react-redux'
+import Admin from './containers/Admin/Admin'
 
 
 ReactDOM.createRoot(document.getElementById('root')).render(
@@ -29,6 +30,7 @@ ReactDOM.createRoot(document.getElementById('root')).render(
       <Route path='/films' element={<Films/>} />
       <Route path='/filmDetails' element={<FilmDetail/>} />
       <Route path='/login' element={<Login />} />
+      <Route path='/admin' element={<Admin />} />
 
       <Route path='/home' element={<Home />} />
       <Route path='/profile' element={<Profile />} />
