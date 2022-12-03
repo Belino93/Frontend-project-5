@@ -7,7 +7,7 @@ import Container from 'react-bootstrap/Container';
 import Button from 'react-bootstrap/Button';
 import './Home.css'
 
-
+ 
 
 
 //BUTTON 
@@ -51,9 +51,9 @@ function DiscoverButton() {
 function Home() {
     return (
         <Container >
-            <Row className='welcome-container d-flex flex-column p-5' >
+            <Row className='container-home d-flex flex-column justify-content-center' >
                 <Col sm md lg={true} >
-                    <div className='welcome-inner-container d-flex flex-column '>
+                    <div className='inner-container-home'>
                         <h6>Discover Abelino's</h6>
                         <h1 className="frase">Your streaming services, <br /> finally in one place!</h1>
                         <p>Meet ABELINO, the cheapest app that combines all the most popular streaming services for easy search <br /> and discovery anywhere you watch movies and shows.</p>

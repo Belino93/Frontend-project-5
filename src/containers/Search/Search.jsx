@@ -1,7 +1,7 @@
 import React from 'react';
 
 
-function Search( { handleInput, search }) { //instead of props, we are adding curly braces to either side of this will be destructuring the parameter which is pulled through, so we are diving deeper through it. 
+function Search( { handleInput, search }) { 
     return (
         <section className="searchBox-wrap">
             <input 

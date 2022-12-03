@@ -1,100 +1,110 @@
 * {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
 }
 
 
-/* MAIN */
+/* MAIN WELCOME CONTAINER */
 
-.welcome-container {
-     /* border: solid 1px white; */
-    background-color: #4b445082;
-    box-shadow: 5px 5px 5px 0px #423f3f, inset 4px 4px 15px 0px #3a3535, ;
-    border-radius: 5px;
-    padding: 20px;
-    height: 100vh;
-    margin: 0 auto;
-    
+.container-home {
+  /* border: solid 1px white; */
+  background-color: #4b445082;
+  box-shadow: 5px 5px 5px 0px #423f3f, inset 4px 4px 15px 0px #3a3535, ;
+  padding: 20px;
+  height: 100vh;
+  margin: 0 auto;
+
 
 }
 
-.welcome-inner-container {
-    font-family:  "Helvetica Neue", 'Roboto'," sans-serif", "Roboto",;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    height: 100%;
-    width: 100%;
+/* MAIN WELCOME CONTAINER */
+
+.inner-container-home {
+  /* border: solid 1px white; */
+  height: 90%;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+ 
+  
+
 }
+
+
+
+
+/* TEXT  */
 
 h6 {
-    color: rgb(248, 244, 244);
-    font-size: 100%;
-    font-weight: bold;
-    margin: 0;
-    padding: 0;
-    text-align: center;
-    margin-top: 10%;
+  color: rgb(248, 244, 244);
+
+  font-weight: bold;
+  margin: 0;
+  padding: 0;
+  text-align: center;
+  margin-top: 10%;
+  
+
 }
 
 .frase {
-    /* border: solid 1px white; */
-    color: white;
-    font-size: 4vw ;
-    text-align: center;
-    width: 100%;
-    padding: 0;
-    margin-bottom: 10%;
-   
+  /* border: solid 1px white; */
+  color: white;
+  font-size: 5vw;
+  text-align: center;
+  width: 100%;
+  padding-top: 30px;
+  margin-bottom: 10%;
+
 
 }
 
 p {
-    /* border: solid 1px white; */
-    color: rgb(248, 244, 244);
-    font-size: 100%;
-    text-align: center;
-    line-height: 100%;
-    padding-top: 50px;
-    line-height: 30px;
+  /* border: solid 1px white; */
+  color: rgb(248, 244, 244);
+  font-size: 1.2rem;
+  text-align: center;
+  line-height: 30px;
 
 }
 
-.discover-button {
-  background-color: #5c34ecca;
+/* BUTTON */
 
+.register-button {
+  background-color: #5c34ecca;
   color: white;
   border: none;
+  margin: 5%;
 }
 
-.discover-button:hover {
-    background-color: #665995ca;
-    color: lightslategray;
-    border: none;
+.register-button:hover {
+  background-color: #665995ca;
+  color: lightslategray;
+  border: none;
 
 }
 
 /* MEDIA QUARIES */
 @media screen and (min-width: 300px) {
-    .frase {
-      font-size: 50px;
-    }
-  }
-  
-  /* If the screen size is 800px wide or less, set the font-size of <div> to 30px */
-  @media screen and (max-width: 800px) {
   .frase {
-      font-size: 30px;
-    }
-
-    p {
-        display: none;
-    }
-
-
-
+    font-size: 50px;
   }
+}
+
+/* If the screen size is 800px wide or less, set the font-size of <div> to 30px */
+@media screen and (max-width: 800px) {
+  .frase {
+    font-size: 40px;
+  }
+
+  p {
+    display: none;
+  }
+
+}
 
 
 

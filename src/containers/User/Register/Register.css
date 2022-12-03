@@ -2,26 +2,66 @@ body {
   background-color: black;
 }
 
-.register-container {
-  border: 1px solid rgb(245, 244, 244);
+/* MAIN CONTAINER  */
+.register-main-container {
+  background: url(https://hotstar-88d5e.web.app/static/media/login-background.05b1a1b3.jpg);
+  background-repeat: no-repeat;
+  background-size: cover;
+  width: 100vw;
+  height: 100vh;
+}
+
+
+.register-container{
+  /* border: 1px solid rgb(245, 244, 244); */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    margin: auto;
+    width: 100vw;
+    height: 90vh;
+}
+
+/* INNER CONTAINER */
+.register-inner-container {
+  /* border: 3px solid rgb(144, 50, 50); */
+  background-color: #4b445082;
+  box-shadow: 5px 5px 5px 0px #423f3f, inset 4px 4px 15px 0px #3a3535, ;
+  border-radius: 15px;
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  margin: auto;
+}
+
+
+/* TEXT */
+.text-container {
+  color: whitesmoke;
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-template-rows: 1fr 1fr;
+    margin: auto;
+    grid-auto-flow: row;
+    grid-row-gap: 8px;
+    text-align: center;
+    margin: 0 30px;
+}
+#oor {
+  margin: 0;
+}
+
+
+
+/* INPUTS */
+.register-inputs-container {
+  /* border: 3px solid blue; */
   display: flex;
   justify-content: center;
   align-items: center;
   flex-direction: column;
-  margin: auto;
-  width: 80vw;
-  height: 80vh;
-  border-radius: 10px;
-}
-
-.text-container{
-  display: grid;
-  grid-template-columns: 1fr;
-  grid-template-rows: 1fr;
-  
-  border: 1px solid rgb(245, 244, 244);
-  color: whitesmoke;
-
+ 
 }
 
 .input-error {
@@ -30,6 +70,28 @@ body {
 }
 
 .self-input {
-  width: 30vw;
+  width: 100%;
   margin-bottom: 1.5em;
+}
+
+/* BUTTON */
+.button-register-conteiner{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  margin-bottom: 20px;
+}
+.register-button {
+  background-color: #5c34ecca;
+  color: white;
+  border: none;
+  margin-top: 5%;
+}
+
+.register-button:hover {
+  background-color: #665995ca;
+  color: lightslategray;
+  border: none;
+
 }
