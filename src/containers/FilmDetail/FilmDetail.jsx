@@ -15,17 +15,15 @@ function FilmDetail() {
   const clickHandler = (film_id) => {
     newLease(jwt, film_id)
       .then((res) => {
-        console.log(res);
+        
       })
       .catch((error) => {
-        console.log(error);
+        
       });
     navigate("/films");
   };
 
   const isRentedFunction = (leaseMoviId) => {
-    console.log(leaseMoviId);
-    console.log(selectedFilm.movie_id);
     if (leaseMoviId === selectedFilm.movie_id) {
       return setIsRented(true);
     } else {

@@ -25,6 +25,12 @@ export const bringMovies = async () => {
   return movies;
 };
 
+export const bringByTitle = async (criteria) => {
+  console.log(criteria)
+  const movies = await axios.post(baseUrl + "/movie/title",{title:criteria});
+  return movies;
+}
+
 export const getProfile = async (localStorageToken) => {
   let config = {
     headers: { Authorization: "Bearer " + localStorageToken },
