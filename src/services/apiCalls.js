@@ -68,3 +68,11 @@ export const newLease = async (localStorageToken, movie_id) => {
   );
   return resp
 };
+
+export const showAllLeases = async (localStorageToken) => {
+  let config = {
+    headers: { Authorization: "Bearer " + localStorageToken },
+  };
+  const resp = await axios.get(baseUrl + '/lease/getAll', config)
+  return resp;
+}

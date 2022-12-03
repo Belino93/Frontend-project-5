@@ -9,6 +9,7 @@ import './Home.css'
 
 
 
+
 //BUTTON 
 
 function NetworkRequest() {
@@ -16,6 +17,7 @@ function NetworkRequest() {
 }
 
 function DiscoverButton() {
+    const navigate = useNavigate();
     const [isLoading, setLoading] = useState(false);
 
     useEffect(() => {
@@ -26,7 +28,10 @@ function DiscoverButton() {
         }
     }, [isLoading]);
 
-    const handleClick = () => setLoading(true);
+    const handleClick = () => {
+        setLoading(true)
+        navigate('/films')
+    };
 
     return (
         <Button
