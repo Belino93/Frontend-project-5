@@ -58,8 +58,8 @@ function Profile() {
 
   useEffect(() => {
     getLeaseById(tokenjw).then((leaseData) => {
-      console.log(leaseData.data);
-      setLeases(leaseData.data[0]);
+      console.log(leaseData.data)
+      setLeases(leaseData.data);
     });
   }, [refund]);
 
@@ -94,16 +94,16 @@ function Profile() {
         </Row>
 
         <Row>
-          <p>YOUR ACTIVE RENTALS</p>
+          <p>YOUR RENTALS</p>
           <div className="container-rental-active">
             {leases.map((lease, index) => (
               <div className="rental-active" key={index}>
                 <img
                   className="rental-img"
-                  src={imgUrl + lease.poster}
+                  src={imgUrl + lease.Movie.poster}
                 />
                 <div className="rental-title">
-                  {lease.title + "..."}
+                  {lease.Movie.title + "..."}
                 </div>
                 <p>Rental date: {lease.createdAt}</p>
                 <button
