@@ -26,7 +26,6 @@ export const bringMovies = async () => {
 };
 
 export const bringByTitle = async (criteria) => {
-  console.log(criteria)
   const movies = await axios.post(baseUrl + "/movie/title",{title:criteria});
   return movies;
 }
