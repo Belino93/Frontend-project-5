@@ -76,6 +76,7 @@ const FilmsCards = () => {
 
                   <text className="title-text my-2" src="">{movie.title.slice(0, 20) + "..."}</text>
 
+
                 </div>
               )
             })}
