@@ -51,7 +51,34 @@
     color: white;
 }
 
-/* .abelino-movies:hover{
-    letter-spacing: .6em;
-    transform: translate3d(4px, -46px, 109px);
-} */
+
+.search-box-container{
+    width: 70%;
+}
+.search-box{
+    display: block;
+    width: 100%;
+    padding: 10px;
+    margin-top: 10px;
+  
+    border: none;
+    outline: none;
+    background: none;
+  
+    text-align: center;
+    cursor: pointer;
+    background-color: #eee;
+    border-radius: 8px;
+  
+    color: #53565A;
+    font-size: 20px;
+    font-weight: 300;
+  
+    transition: 0.4s ease-out;
+
+    
+}
+
+.search-box:focus{
+    box-shadow: 1px 2px 16px 4px rgba(158,153,158,0.73);
+  }
