@@ -1,6 +1,13 @@
-body {
-  background-color: black;
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
 }
+
+body {
+  background-color: rgb(4, 2, 2);
+}
+
 
 /* MAIN CONTAINER  */
 .register-main-container {
@@ -29,10 +36,12 @@ body {
   background-color: #4b445082;
   box-shadow: 5px 5px 5px 0px #423f3f, inset 4px 4px 15px 0px #3a3535, ;
   border-radius: 15px;
+
   display: flex;
   justify-content: center;
   flex-direction: column;
   margin: auto;
+
 }
 
 
@@ -54,6 +63,7 @@ body {
 
 
 
+
 /* INPUTS */
 .register-inputs-container {
   /* border: 3px solid blue; */
@@ -64,12 +74,25 @@ body {
  
 }
 
+/* INPUTS MAIN CONTAINER */
+.inputs-container {
+  /* border: 3px solid rgb(134, 168, 34); */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+
+
+}
+
+
 .input-error {
   color: red;
   text-align: center;
 }
 
 .self-input {
+
   width: 100%;
   margin-bottom: 1.5em;
 }
@@ -90,8 +113,31 @@ body {
 }
 
 .register-button:hover {
+
   background-color: #665995ca;
   color: lightslategray;
   border: none;
 
 }
+
+
+
+/* MEDIA QUARIES */
+@media screen and (min-width: 300px) {
+  
+}
+
+/* If the screen size is 800px wide or less, set the font-size of <div> to 30px */
+@media screen and (max-width: 800px) {
+h2 {
+    font-size: 30px;
+  }
+
+  p {
+      display: none;
+  }
+
+
+
+}
+

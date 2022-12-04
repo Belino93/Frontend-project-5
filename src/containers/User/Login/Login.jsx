@@ -1,7 +1,9 @@
 import "./Login.css";
 import React from "react";
 import { LockOutlined, UserOutlined } from "@ant-design/icons";
+
 import { Button, Form, Input, Typography } from "antd";
+
 import { useState, useEffect } from "react";
 import { useNavigate } from "react-router-dom";
 import { loginUser } from "../../../services/apiCalls";
@@ -11,7 +13,7 @@ function Login() {
   const navigate = useNavigate();
   const tokenjw = localStorage.getItem("token");
   const { decodedToken } = useJwt(tokenjw);
-
+  const { Text, Link } = Typography;
   const [user, setUser] = useState({
     email: "",
     password: "",
@@ -53,6 +55,7 @@ function Login() {
   };
 
   return (
+
     <div className="login-background">
       <div className="login-container">
         <div className=" login-form-container">
@@ -67,6 +70,7 @@ function Login() {
 
 
           <Form className="login-inner-form">
+
             <Form.Item>
               <Input
                 name="email"
@@ -92,12 +96,14 @@ function Login() {
             <Form.Item>
               <Button
                 type="primary"
+
                 className="login-form-button"
                 onClick={() => clickHandler(user)}
               >
                 Log in
               </Button>
               <h6 id="or">Or {" "}</h6>
+
               <span
                 className="navigator-link"
                 onClick={() => navigate("/register")}
