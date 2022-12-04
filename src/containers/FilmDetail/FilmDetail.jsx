@@ -26,7 +26,7 @@ function FilmDetail() {
       .catch((error) => {
         console.log(error);
       });
-    navigate("/films");
+    navigate("/films")
   };
 
   const isRentedFunction = (leaseMoviId) => {
