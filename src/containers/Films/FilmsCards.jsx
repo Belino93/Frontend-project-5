@@ -61,15 +61,23 @@ const FilmsCards = () => {
 
   if (movies.length > 0){
     return (
+
+     
+      <div className="film-container">
+       <div>
+        <h1 className="abelino-movies">ABELINO'S MOVIES</h1>
+       </div>
+
       <div className="main-container">
         <div><input onChange={(e)=>inputHandler(e.target.value)}></input></div>
       <div className="film-container">   
+
         {movies.map((movie, index) =>{
       return(
           <div className="film-card" key={index} onClick={() => {clickHandler(movie)}} >
             <img className="" src={`https://image.tmdb.org/t/p/w200/${movie.poster}`} alt="Poster" />
           
-            <p className="" src="">{movie.title.slice(0, 20) + "..."}</p>
+            <text className="title-text my-2" src="">{movie.title.slice(0, 20) + "..."}</text>
 
           </div>
 )        })}

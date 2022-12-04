@@ -8,13 +8,13 @@
 /* MAIN WELCOME CONTAINER */
 
 .container-home {
-  /* border: solid 1px white; */
+  /* border: so auto;
+lid 1px white; */
   background-color: #4b445082;
   box-shadow: 5px 5px 5px 0px #423f3f, inset 4px 4px 15px 0px #3a3535, ;
   padding: 20px;
   height: 100vh;
-  margin: 0 auto;
-
+  margin: 0
 
 }
 

@@ -64,72 +64,84 @@ function Profile() {
 
   if (leases.length === 0) {
     return (
-      <Container fluid className="container-profile">
-        <Row>
+      <Container-fluid className="container-profile">
+        <Row className="profile-card-background">
           <div className="profile-card">
             <h3>Your profile, {profile.name}</h3>
-            <p>{profile.email}</p>
+            <text>{profile.email}</text>
           </div>
         </Row>
 
         <Row>
-          <p>YOUR ACTIVE RENTALS</p>
+          <text className="central-text mt-5">YOUR ACTIVE RENTALS</text>
           <div className="film-container">
             <Spinner animation="border" variant="white" />
           </div>
         </Row>
-      </Container>
+      </Container-fluid>
     );
   }
 
   if (leases.length > 0) {
     return (
-      <Container fluid className="container-profile">
-        <Row>
-          <div className="profile-card">
-            <h3>Your profile, {profile.name}</h3>
-            <p>{profile.email}</p>
-          </div>
-        </Row>
+      <Container-fluid className="container-profile">
+        <div className="main-container-profile">
+          <Row className="m-0">
+            <div className="profile-card">
+            <div className="profile-card-inner">
+               <div className="profile-card-text">
+                 <h3 className="h3-rentals ">Your profile, {profile.name}</h3>
+              <text>{profile.email}</text>
+            </div>
+            </div>
+           
+           
+            </div>
+          </Row>
 
-        <Row>
-          <p>YOUR RENTALS</p>
-          <div className="container-rental-active">
-            {leases.map((lease, index) => (
-              <div className="rental-active" key={index}>
-                <img
-                  className="rental-img"
-                  src={imgUrl + lease.Movie.poster}
-                />
-                <div className="rental-title">
-                  {lease.Movie.title + "..."}
+          <Row className="container-rental-active ">
+            <text className="central-text mt-5">YOUR RENTALS</text>
+            <div className="container-rental-active ">
+              {leases.map((lease, index) => (
+                <div className="rental-active p-2" key={index}>
+                  <img
+                    className="rental-img "
+                    src={imgUrl + lease.Movie.poster}
+                  />
+                  <div className="rental-title my-2">
+                    {lease.Movie.title + "..."}
+                  </div>
+                  <text>Rental date: {lease.createdAt}</text>
+                  <button
+                    className="rental-button mt-2"
+                    onClick={() => {
+                      clickHandler(lease.lease_id);
+                    }}
+                  >
+                    Return
+                  </button>
                 </div>
-                <p>Rental date: {lease.createdAt}</p>
-                <button
-                  className="rental-button"
-                  onClick={() => {
-                    clickHandler(lease.lease_id);
-                  }}
-                >
-                  Return
-                </button>
-              </div>
-            ))}
-          </div>
-        </Row>
-      </Container>
+              ))}
+            </div>
+          </Row>
+        </div>
+
+      </Container-fluid>
     );
   }
   return (
     <div className="container-profile">
-      <div className="profile-card">
-        <h1>Profile</h1>
-        <h3>
-          Hello, {profile.name} {profile.surname}
-        </h3>
-        <p>{profile.email}</p>
-        <p>ANY RENTAL ACTIVE</p>
+      <div className="main-container-profile">
+        <div className="profile-card">
+          <h1>Profile</h1>
+          <h3>
+            Hello, {profile.name} {profile.surname}
+          </h3>
+          <text>{profile.email}</text>
+          <text className="central-text mt-5">ANY RENTAL ACTIVE</text>
+        </div>
       </div>
+
     </div>
   );
 }
