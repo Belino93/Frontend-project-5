@@ -1,5 +1,5 @@
 import axios from "axios";
-const baseUrl = "https://backend-project-5-production.up.railway.app/";
+const baseUrl = "https://backend-project-5-production.up.railway.app";
 
 export const createUser = async (user) => {
   const userCreated = await axios.post(baseUrl + "/auth/register", {

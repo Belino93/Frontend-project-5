@@ -39,6 +39,19 @@ function FilmDetail() {
     });
 
   }, []);
+  if (selectedFilm?.movie_id !== undefined) {
+      return (
+        <div className="container">
+          <div className="film-Container">
+            <img
+              src={`https://image.tmdb.org/t/p/w200/${selectedFilm.poster}`}
+            />
+            <h1>{selectedFilm.title}</h1>
+            <p>{selectedFilm.overview}</p>
+          </div>
+        </div>
+      );
+    }
 
   if (selectedFilm?.movie_id !== undefined && isRented === true) {
     if (localStorage.getItem("token")) {
