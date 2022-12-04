@@ -1,5 +1,5 @@
 import axios from "axios";
-const baseUrl = "http://localhost:3005";
+const baseUrl = "https://backend-project-5-production.up.railway.app";
 
 export const createUser = async (user) => {
   const userCreated = await axios.post(baseUrl + "/auth/register", {
@@ -24,6 +24,12 @@ export const bringMovies = async () => {
   const movies = await axios.get(baseUrl + "/movie/");
   return movies;
 };
+
+export const bringByTitle = async (criteria) => {
+  console.log(criteria)
+  const movies = await axios.post(baseUrl + "/movie/title",{title:criteria});
+  return movies;
+}
 
 export const getProfile = async (localStorageToken) => {
   let config = {

@@ -3,7 +3,7 @@ import {
   getLeaseById,
   updateLease,
 } from "../../../services/apiCalls";
-import { useState, useEffect } from "react";
+import { useState, useEffect, } from "react";
 import { useNavigate } from "react-router-dom";
 import "./Profile.css";
 import Container from "react-bootstrap/Container";
@@ -58,7 +58,6 @@ function Profile() {
 
   useEffect(() => {
     getLeaseById(tokenjw).then((leaseData) => {
-      console.log(leaseData.data)
       setLeases(leaseData.data);
     });
   }, [refund]);

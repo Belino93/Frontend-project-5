@@ -1,17 +1,20 @@
 import React from "react";
-import { useState, useEffect } from "react"
-import {bringMovies} from '../../services/apiCalls'
+import { useState, useEffect,useCallback } from "react"
+import {bringMovies, bringByTitle} from '../../services/apiCalls'
 import './FilmsCards.css'
 import { Spinner } from 'react-bootstrap';
 import { useDispatch } from "react-redux";
 import { useNavigate } from "react-router-dom";
 import {addFilm} from './filmSlice'
+import {debounce} from "lodash";
+
 
 const FilmsCards = () => {
   const dispatch = useDispatch();
   const navigate = useNavigate();
 
   const [movies, setMovies] = useState([])
+  const [search, setSearch] = useState([])
 
 
   useEffect(() => {
@@ -22,25 +25,53 @@ const FilmsCards = () => {
       
     })
     .catch (Error);
+      return
     }
   } )
 
   // Handlers
   const clickHandler = (film) => {
-
     dispatch(addFilm({...film, details: film}));
-
     navigate('/filmDetails')
+  }
 
+  const inputHandler = debounce((value) => {
+    console.log(value)
+      bringByTitle(value).then((res) => setSearch(res.data))
+  }, 500);
+
+  if((movies.length > 0) && (search.length > 0)){
+    return (
+      <div className="main-container">
+        <div><input onChange={(e)=>inputHandler(e.target.value)}></input></div>
+      <div className="film-container">   
+        {search.map((movie, index) =>{
+      return(
+          <div className="film-card" key={index} onClick={() => {clickHandler(movie)}} >
+            <img className="" src={`https://image.tmdb.org/t/p/w200/${movie.poster}`} alt="Poster" />
+          
+            <p className="" src="">{movie.title.slice(0, 20) + "..."}</p>
+
+          </div>
+)        })}
+      </div>
+      </div>
+    );
   }
 
   if (movies.length > 0){
     return (
+
      
       <div className="film-container">
        <div>
         <h1 className="abelino-movies">ABELINO'S MOVIES</h1>
        </div>
+
+      <div className="main-container">
+        <div><input onChange={(e)=>inputHandler(e.target.value)}></input></div>
+      <div className="film-container">   
+
         {movies.map((movie, index) =>{
       return(
           <div className="film-card" key={index} onClick={() => {clickHandler(movie)}} >
@@ -51,8 +82,8 @@ const FilmsCards = () => {
           </div>
 )        })}
       </div>
+      </div>
     );
-
   }
 return (
   <div className="film-container"><Spinner animation="border" variant="white"/></div>
