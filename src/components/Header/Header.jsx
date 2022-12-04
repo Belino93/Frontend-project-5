@@ -20,7 +20,7 @@ function Header() {
     return (
       <Navbar collapseOnSelect expand="lg" bg="black" variant="dark">
         <Container>
-          <Navbar.Brand className="abelino-icon" href="#home"></Navbar.Brand>
+          <Navbar.Brand className="abelino-icon" href="#home">Abelino's Movies</Navbar.Brand>
           <Navbar.Toggle aria-controls="responsive-navbar-nav" />
           <Navbar.Collapse id="responsive-navbar-nav">
             <Nav className="me-auto">
@@ -57,7 +57,7 @@ function Header() {
     return (
       <Navbar collapseOnSelect expand="lg" bg="black" variant="dark">
         <Container>
-          <Navbar.Brand className="abelino-icon" href="#home"></Navbar.Brand>
+          <Navbar.Brand className="abelino-icon" href="#home">Abelino's Movies</Navbar.Brand>
           <Navbar.Toggle aria-controls="responsive-navbar-nav" />
           <Navbar.Collapse id="responsive-navbar-nav">
             <Nav className="me-auto">
@@ -101,7 +101,7 @@ function Header() {
   return (
     <Navbar collapseOnSelect expand="lg" bg="black" variant="dark">
       <Container>
-        <Navbar.Brand className="abelino-icon" href="#home"></Navbar.Brand>
+        <Navbar.Brand className="abelino-icon" href="#home">Abelino's Movies</Navbar.Brand>
         <Navbar.Toggle aria-controls="responsive-navbar-nav" />
         <Navbar.Collapse id="responsive-navbar-nav">
           <Nav className="me-auto">
