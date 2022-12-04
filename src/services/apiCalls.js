@@ -44,9 +44,13 @@ export const getLeaseById = async (localStorageToken) => {
   let config = {
     headers: { Authorization: "Bearer " + localStorageToken },
   };
-
-  const resp = await axios.get(baseUrl + "/lease/get", config);
-  return resp;
+  try {
+    const resp = await axios.get(baseUrl + "/lease/get", config);
+    return resp;
+  } catch (error) {
+    
+  }
+  
 };
 
 export const updateLease = async (localStorageToken, lease_id) => {
