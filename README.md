@@ -43,7 +43,7 @@
 <img width="1341" alt="movies-list" src="https://user-images.githubusercontent.com/74429096/205590514-5c0e948d-7c53-41b8-8250-464698d6d9c2.png">
 
 
-### RENT A MOVIE AND PERFIL 
+### RENT A MOVIE AND PROFILE 
 <p>The user can rent the movie and have a view in his rental's a history .</p>
 
 <img width="1366" alt="movies" src="https://user-images.githubusercontent.com/74429096/205590573-45d31b74-9869-41b9-b1f0-4c48b4bc27da.png">
