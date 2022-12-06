@@ -69,7 +69,6 @@ export const updateLease = async (localStorageToken, lease_id) => {
 };
 
 export const newLease = async (localStorageToken, movie_id) => {
-  console.log(movie_id);
   let config = {
     headers: { Authorization: "Bearer " + localStorageToken },
   };

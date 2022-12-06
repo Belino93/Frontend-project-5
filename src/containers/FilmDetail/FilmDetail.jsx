@@ -42,7 +42,7 @@ function FilmDetail() {
         return
       }
     })
-    .catch((error) =>{return console.log('hola')});
+    .catch((error) =>{});
 
   }, []);
   

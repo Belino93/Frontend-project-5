@@ -51,7 +51,6 @@ function Profile() {
 
   const clickHandler = (lease_id) => {
     updateLease(tokenjw, lease_id).then((res) => {
-      console.log(res);
       setRefund(!refund);
     });
   };

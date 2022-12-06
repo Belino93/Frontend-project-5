@@ -15,7 +15,7 @@ function Admin() {
   useEffect(() => {
     showAllLeases(token)
       .then((res) => setLeases(res.data))
-      .catch((error) => console.log(error));
+      .catch((error) => {});
   }, []);
   if (decodedToken?.user_role !== 1) {
     navigate("/");
