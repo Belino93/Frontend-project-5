@@ -4,6 +4,7 @@ import { filmData } from "../Films/filmSlice";
 import { useNavigate } from "react-router-dom";
 import { newLease, getLeaseById } from "../../services/apiCalls";
 import { useState, useEffect } from "react";
+import './FilmDetail.css'
 
 function FilmDetail() {
   const navigate = useNavigate();

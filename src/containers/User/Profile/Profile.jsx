@@ -3,7 +3,7 @@ import {
   getLeaseById,
   updateLease,
 } from "../../../services/apiCalls";
-import { useState, useEffect, } from "react";
+import { useState, useEffect } from "react";
 import { useNavigate } from "react-router-dom";
 import "./Profile.css";
 import Container from "react-bootstrap/Container";
@@ -88,14 +88,12 @@ function Profile() {
         <div className="main-container-profile">
           <Row className="m-0">
             <div className="profile-card">
-            <div className="profile-card-inner">
-               <div className="profile-card-text">
-                 <h3 className="h3-rentals ">Your profile, {profile.name}</h3>
-              <text>{profile.email}</text>
-            </div>
-            </div>
-           
-           
+              <div className="profile-card-inner">
+                <div className="profile-card-text">
+                  <h3 className="h3-rentals ">Your profile, {profile.name}</h3>
+                  <text>{profile.email}</text>
+                </div>
+              </div>
             </div>
           </Row>
 
@@ -125,7 +123,6 @@ function Profile() {
             </div>
           </Row>
         </div>
-
       </Container-fluid>
     );
   }
@@ -141,7 +138,6 @@ function Profile() {
           <text className="central-text mt-5">ANY RENTAL ACTIVE</text>
         </div>
       </div>
-
     </div>
   );
 }
