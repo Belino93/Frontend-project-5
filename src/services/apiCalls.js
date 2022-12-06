@@ -51,7 +51,7 @@ export const getLeaseById = async (localStorageToken) => {
     const resp = await axios.get(baseUrl + "/lease/get", config);
     return resp;
   } catch (error) {
-    
+
   }
   
 };
