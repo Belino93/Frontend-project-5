@@ -76,6 +76,7 @@ function Register() {
   };
 
   return (
+
     <div className="register-main-container">
       <div className="register-container">
         <div className="register-inner-container">
@@ -160,6 +161,7 @@ function Register() {
 
 
         </div>
+
       </div>
 
     </div>
