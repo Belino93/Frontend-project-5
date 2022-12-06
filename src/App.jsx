@@ -5,13 +5,7 @@ import Home from "./containers/Home/Home";
 
 function App() {
 
-  const [state, setState] = useState({
-    s: "",
-    resultados: [],
-    selected: {}
-
-
-  })
+  
 
   return (
     <div className="App-home">

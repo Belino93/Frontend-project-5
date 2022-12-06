@@ -64,13 +64,14 @@ function Register() {
       userError.password2Error === ""
     ) {
       createUser(user)
-        .then((created) => console.log(created))
+        .then((created) => navigate('/login'))
         .catch((error) => {
           setUserError((prevState) => ({
             ...prevState,
             emailError: error.response.data.message,
           }));
         });
+      
     }
   };
 

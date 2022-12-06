@@ -24,8 +24,7 @@ const FilmsCards = () => {
           return setMovies(movies.data)
 
         })
-        .catch(Error);
-      return
+        .catch((error) => {return})
     }
   })
 
@@ -36,7 +35,6 @@ const FilmsCards = () => {
   }
 
   const inputHandler = debounce((value) => {
-    console.log(value)
     bringByTitle(value).then((res) => setSearch(res.data))
   }, 500);
 
@@ -74,7 +72,7 @@ const FilmsCards = () => {
                 <div className="film-card" key={index} onClick={() => { clickHandler(movie) }} >
                   <img className="" src={`https://image.tmdb.org/t/p/w200/${movie.poster}`} alt="Poster" />
 
-                  <text className="title-text my-2" src="">{movie.title.slice(0, 20) + "..."}</text>
+                  <p className="title-text my-2" src="">{movie.title.slice(0, 20) + "..."}</p>
 
 
                 </div>

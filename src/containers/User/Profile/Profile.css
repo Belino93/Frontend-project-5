@@ -11,9 +11,7 @@
   background-repeat: no-repeat;
   background-position: center;
   color: #ffffff;
-  
-
-
+  padding: 0;
 }
 
 
@@ -22,7 +20,7 @@
   box-shadow: 5px 5px 5px 0px #423f3f, inset 4px 4px 15px 0px #3a3535, ;
 display: flex;
 margin: 0 auto;
-width: 100vw;
+width: 100%;
 display: flex;
 flex-direction: column;
 justify-content: center;
@@ -51,12 +49,14 @@ font-weight: bold;
 }
 
 .container-rental-active {
+  width: 100%;
   display: flex;
   flex-wrap: wrap;
   background-color:whitesmoke;
   align-items: center;
   justify-content: center;
   padding-bottom: 30px;
+  margin: 0;
 }
 
 .rental-active {

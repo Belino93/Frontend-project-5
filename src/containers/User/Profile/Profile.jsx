@@ -64,7 +64,7 @@ function Profile() {
 
   if (leases.length === 0) {
     return (
-      <Container-fluid className="container-profile">
+      <Container className="container-profile">
         <Row className="profile-card-background">
           <div className="profile-card">
             <h3>Your profile, {profile.name}</h3>
@@ -78,7 +78,7 @@ function Profile() {
             <Spinner animation="border" variant="white" />
           </div>
         </Row>
-      </Container-fluid>
+      </Container>
     );
   }
 

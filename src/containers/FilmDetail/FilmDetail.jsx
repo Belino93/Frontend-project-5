@@ -33,10 +33,15 @@ function FilmDetail() {
 
   useEffect(() => {
     getLeaseById(jwt).then((leaseData) => {
-      leaseData.data.map((lease) => {
-        isRentedFunction(lease.movie_id)
-      })
-    });
+      if (leaseData !== undefined) {
+        leaseData.data.map((lease) => {
+          isRentedFunction(lease.movie_id)
+        })
+      }else{
+        return
+      }
+    })
+    .catch((error) =>{return console.log('hola')});
 
   }, []);
   
