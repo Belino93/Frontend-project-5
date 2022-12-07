@@ -1,13 +1,11 @@
 
 .footer-container {
   background-color: black;
-  
   bottom: 0;
   width: 100%;
   display: flex;
   justify-content: space-evenly;
   border-top: rgba(11, 5, 5, 0.201) solid 1px ;
-
 }
 
 .p-footer{

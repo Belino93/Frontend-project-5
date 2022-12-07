@@ -33,17 +33,19 @@ function FilmDetail() {
   };
 
   useEffect(() => {
-    getLeaseById(jwt).then((leaseData) => {
-      if (leaseData !== undefined) {
-        leaseData.data.map((lease) => {
-          isRentedFunction(lease.movie_id)
-        })
-      }else{
-        return
-      }
-    })
-    .catch((error) =>{});
-
+    if(jwt){
+      getLeaseById(jwt).then((leaseData) => {
+        if (leaseData !== undefined) {
+          leaseData.data.map((lease) => {
+            isRentedFunction(lease.movie_id)
+          })
+        }else{
+          return
+        }
+      })
+      .catch((error) =>{});
+    }
+    
   }, []);
   
   if (selectedFilm?.movie_id !== undefined && isRented === true) {
